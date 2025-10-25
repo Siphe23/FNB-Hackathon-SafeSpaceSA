@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #dff0ff; /* soft blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome-container {
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1b2735;
+  margin-bottom: 40px;
+}
+
+.breathing-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe799 0%, #ffebc1 80%);
+  margin: 0 auto 40px;
+}
+
+.welcome-text {
+  font-size: 16px;
+  color: #1b2735;
+  margin-bottom: 30px;
+}
+
+.continue-btn {
+  background-color: #4a8af4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background-color: #3368d4;
+}
