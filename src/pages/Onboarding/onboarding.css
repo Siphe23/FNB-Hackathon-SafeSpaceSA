@@ -1,0 +1,78 @@
+.onboarding-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+ 
+}
+
+.onboarding-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  max-width: 340px;
+  width: 100%;
+}
+
+.onboarding-img {
+  width: 180px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.onboarding-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.onboarding-text {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.onboarding-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.onboarding-btn:hover {
+  background-color: #2563eb;
+}
+
+/* ✅ Unique container for dots (centered properly) */
+.onboarding-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Dots styling */
+.onboard-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #4a8af4;
+  display: inline-block;
+  margin: 0 5px;
+ 
+}
+
+.onboard-dot.active {
+  background-color: #4a8af4;
+}

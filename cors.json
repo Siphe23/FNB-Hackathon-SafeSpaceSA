@@ -1,0 +1,12 @@
+[
+  {
+    "origin": [
+      "http://localhost:3000",
+      "https://safespacesa-app.web.app",
+      "https://safespacesa-app.firebaseapp.com"
+    ],
+    "method": ["GET", "HEAD", "PUT", "POST", "DELETE", "OPTIONS"],
+    "maxAgeSeconds": 3600,
+    "responseHeader": ["Content-Type", "x-goog-meta-*"]
+  }
+]

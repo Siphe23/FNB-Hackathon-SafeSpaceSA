@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.auth-container {
+  max-width: 380px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  color: #2d2d2d;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6b6b6b;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.auth-form button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.auth-form button:disabled {
+  background: #b0c4de;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.switch {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch span {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
