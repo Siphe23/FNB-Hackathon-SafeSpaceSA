@@ -8,6 +8,11 @@
 
 # Testing
 /coverage
+<<<<<<<<< Temporary merge branch 1
+node_modules/
+.env
+=========
+>>>>>>>>> Temporary merge branch 2
 
 
 /.env
