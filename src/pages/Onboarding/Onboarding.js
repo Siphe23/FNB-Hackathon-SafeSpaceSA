@@ -16,12 +16,12 @@ const slides = [
   {
     title: "Speak Up Safely",
     text: "You can report anonymously. We’ll make sure your story is heard safely.",
-    img: SpeakImg,
+    img: ChangeImg,
   },
   {
     title: "Be the Change",
     text: "Join a community that supports and uplifts each other every day.",
-    img: ChangeImg,
+    img: SpeakImg,
   },
 ];
 
@@ -51,7 +51,7 @@ export default function Onboarding() {
         </button>
       </div>
 
-      {/* ✅ Updated dots container */}
+    
       <div className="onboarding-dots">
         {slides.map((_, index) => (
           <span
