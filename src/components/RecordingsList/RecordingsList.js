@@ -1,7 +1,7 @@
 // src/components/RecordingsList/RecordingsList.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { getDatabase, ref as dbRef, onValue, push, set } from "firebase/database";
-import "./Recordings.css"; // make sure this path matches your project
+import "./RecordingsList.css"; 
 
 export default function RecordingsList() {
   const [recordings, setRecordings] = useState([]);       // saved recordings from RTDB
