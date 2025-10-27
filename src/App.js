@@ -16,11 +16,12 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import Profile from "./pages/Profile/Profile";
 
+
 // 🔹 Firebase
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./Firebase/firebase";
 
-// 🔹 Simple Loading Screen (removed dots)
+// 🔹 Simple Loading Screen
 function Loading() {
   return (
     <div
@@ -96,7 +97,7 @@ function App() {
         {/* ✅ Fallback Redirect */}
         <Route
           path="*"
-          element={<Navigate to={user ? "/profile" : "/"} replace />}
+          element={<Navigate to={user ? "/dashboard" : "/"} replace />}
         />
       </Routes>
 

@@ -1,0 +1,9 @@
+.video-recorder { display:flex; flex-direction:column; gap:12px; align-items:center; }
+.video-preview { position:relative; display:flex; gap:12px; align-items:flex-start; }
+.preview-video { width:320px; height:240px; background:#000; border-radius:8px; object-fit:cover; }
+.preview-playback { display:flex; flex-direction:column; gap:8px; align-items:center; }
+.playback-video { width:260px; height:200px; border-radius:6px; }
+.recorder-controls { display:flex; gap:10px; }
+.btn { padding:8px 12px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); cursor:pointer; background:#fff; }
+.btn.primary { background:#4a8af4; color:#fff; border:none; }
+.btn.danger { background:#ef4444; color:#fff; border:none; }

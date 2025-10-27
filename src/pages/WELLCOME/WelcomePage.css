@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #dff0ff; /* soft blue background */
+  font-family: 'Poppins', 'Arial', sans-serif;
+  background-color: #dff0ff; /* Soft blue background */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,39 +10,90 @@ body {
 
 .welcome-container {
   text-align: center;
+  background: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
 }
 
 .welcome-title {
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 700;
   color: #1b2735;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
 }
 
 .breathing-circle {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background: radial-gradient(circle, #ffe799 0%, #ffebc1 80%);
-  margin: 0 auto 40px;
+  margin: 0 auto 35px;
+  box-shadow: 0 4px 12px rgba(255, 215, 100, 0.3);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Subtle breathing animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(255, 215, 100, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(255, 215, 100, 0.5);
+  }
 }
 
 .welcome-text {
   font-size: 16px;
-  color: #1b2735;
-  margin-bottom: 30px;
+  color: #334155;
+  margin-bottom: 35px;
+  line-height: 1.6;
 }
 
+/* Modern button */
 .continue-btn {
-  background-color: #4a8af4;
-  color: white;
+  background: linear-gradient(90deg, #4a8af4, #007bff);
+  color: #ffffff;
   border: none;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: 12px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(74, 138, 244, 0.3);
 }
 
 .continue-btn:hover {
-  background-color: #3368d4;
+  background: linear-gradient(90deg, #3c7ae0, #005fd1);
+  box-shadow: 0 6px 16px rgba(74, 138, 244, 0.45);
+  transform: translateY(-2px);
+}
+
+.continue-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(74, 138, 244, 0.3);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .welcome-container {
+    padding: 2.2rem 1.5rem;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+  }
+
+  .continue-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
 }
