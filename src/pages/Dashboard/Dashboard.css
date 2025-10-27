@@ -1,17 +1,19 @@
-
-
-/* User Info Section */
+/* =========================
+   USER CARD
+========================= */
 .user-card-wrapper {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-   
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
 }
 
 .user-actions {
   display: flex;
   gap: 8px;
   margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .user-action-btn {
@@ -24,6 +26,8 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .user-action-btn:hover {
@@ -34,18 +38,24 @@
   width: 18px;
   height: 18px;
 }
-/* Circle Area */
+
+/* =========================
+   DASHBOARD CIRCLE AREA
+========================= */
 .dashboard-circle-area {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 90vw;
+  max-width: 420px;
+  height: 90vw;
+  max-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  overflow: hidden;
+  padding: 10px;
 }
 
-/* Icon Wrappers Around Circle */
 .feature-icon-wrapper {
   position: absolute;
   text-align: center;
@@ -60,10 +70,9 @@
   transform: scale(1.1);
 }
 
-/* Enlarged and refined icon circles */
 .icon-circle {
-  width: 75px;               /* ⬆️ Increased from 60px */
-  height: 75px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -78,33 +87,31 @@
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
 }
 
-/* Icon images enlarged slightly */
 .icon-image {
-  width: 38px;               /* ⬆️ Increased from 28px */
-  height: 38px;
+  width: 36px;
+  height: 36px;
 }
 
-/* Feature name text below each icon */
 .feature-name {
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 14px;
   font-weight: 600;
   color: #1e293b;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   letter-spacing: 0.4px;
-  transition: all 0.25s ease;
   text-align: center;
   white-space: nowrap;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Slight hover effect to emphasize icon label */
 .feature-icon-wrapper:hover .feature-name {
   color: #2563eb;
   text-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
   transform: scale(1.05);
 }
 
-/* Active state (when clicked/selected) */
 .feature-icon-wrapper.active .feature-name {
   color: #1d4ed8;
   font-weight: 700;
@@ -112,54 +119,148 @@
   letter-spacing: 0.6px;
 }
 
-/* Responsive scaling for smaller screens */
-@media (max-width: 768px) {
-  .feature-name {
-    font-size: 12.5px;
-    margin-top: 6px;
-  }
-}
-
-@media (max-width: 480px) {
-  .feature-name {
-    font-size: 11px;
-    margin-top: 4px;
-  }
-}
-/* Keeps icon content upright */
 .icon-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform-origin: center;
 }
 
-
-@media (max-width: 480px) {
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
   .dashboard-circle-area {
-    width: 260px;
-    height: 260px;
+    width: 80vw;
+    height: 80vw;
   }
 
   .icon-circle {
-    width: 58px;
-    height: 58px;
+    width: 60px;
+    height: 60px;
   }
 
   .icon-image {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .feature-name {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-circle-area {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .icon-circle {
+    width: 52px;
+    height: 52px;
+  }
+
+  .icon-image {
+    width: 26px;
+    height: 26px;
   }
 
   .feature-name {
     font-size: 11px;
   }
+
+  .user-card-wrapper {
+    top: 10px;
+    right: 10px;
+  }
+
+  .user-actions {
+    gap: 6px;
+  }
 }
+
+/* =========================
+   UNIFIED MODAL STYLES
+========================= */
 .modal-overlay {
-  position:fixed; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:999;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+  padding: 16px;
+  overflow-y: auto;
 }
-.modal { background:#fff; padding:16px; border-radius:12px; width:90%; max-width:900px; }
-.close-btn { float:right; background:#eee; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; }
 
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
 
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #555;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #d00;
+}
+
+.modal h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* 🎙 Popup after recording */
+.record-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 280px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 1500;
+}
+
+.record-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+/*

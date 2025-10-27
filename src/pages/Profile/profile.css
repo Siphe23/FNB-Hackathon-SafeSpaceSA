@@ -3,8 +3,9 @@
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
- 
   min-height: 100vh;
+  background: #f8fafc;
+  box-sizing: border-box;
 }
 
 .profile-title {
@@ -12,8 +13,11 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 25px;
+  text-align: center;
+  word-wrap: break-word;
 }
 
+/* 🧩 Card */
 .profile-card {
   background: #fff;
   border-radius: 20px;
@@ -21,8 +25,11 @@
   width: 100%;
   max-width: 450px;
   padding: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
+/* 🖼 Avatar */
 .profile-avatar {
   display: flex;
   flex-direction: column;
@@ -37,6 +44,7 @@
   object-fit: cover;
   border: 3px solid #4a8af4;
   margin-bottom: 10px;
+  transition: all 0.3s ease;
 }
 
 .upload-btn {
@@ -54,6 +62,7 @@
   background: #2563eb;
 }
 
+/* 🧾 Fields */
 .profile-fields label {
   display: block;
   font-weight: 600;
@@ -71,8 +80,10 @@
   font-size: 0.95rem;
   margin-bottom: 10px;
   resize: none;
+  box-sizing: border-box;
 }
 
+/* 💾 Save Button */
 .save-btn {
   width: 100%;
   background-color: #3b82f6;
@@ -84,18 +95,85 @@
   font-weight: 600;
   margin-top: 15px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .save-btn:hover {
   background-color: #2563eb;
+  transform: translateY(-2px);
 }
 
+/* ⏳ Loading */
 .profile-loading {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   font-size: 1.2rem;
   color: #4a8af4;
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 30px 15px;
+  }
+
+  .profile-card {
+    padding: 25px 20px;
+    max-width: 380px;
+  }
+
+  .profile-avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-title {
+    font-size: 1.6rem;
+  }
+
+  .save-btn {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 20px 12px;
+    min-height: auto;
+  }
+
+  .profile-card {
+    padding: 20px 15px;
+    border-radius: 16px;
+    max-width: 100%;
+  }
+
+  .profile-avatar img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .upload-btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .profile-fields input,
+  .profile-fields textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .save-btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
 }

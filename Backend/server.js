@@ -93,3 +93,33 @@ app.post("/api/upload-video", upload.single("video"), async (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
+// --- List all uploaded recordings ---
+app.get("/api/list-audio", async (req, res) => {
+  try {
+    const snapshot = await rtdb.ref("recordings").once("value");
+    const recordings = snapshot.val() || {};
+    const list = Object.entries(recordings).map(([id, data]) => ({
+      id,
+      ...data,
+    }));
+    res.status(200).json(list);
+  } catch (error) {
+    console.error("List audio error:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
+// --- List all uploaded videos ---
+app.get("/api/list-videos", async (req, res) => {
+  try {
+    const snapshot = await rtdb.ref("videos").once("value");
+    const videos = snapshot.val() || {};
+    const list = Object.entries(videos).map(([id, data]) => ({
+      id,
+      ...data,
+    }));
+    res.status(200).json(list);
+  } catch (error) {
+    console.error("List videos error:", error);
+    res.status(500).json({ error: error.message });
+  }
+});
