@@ -8,8 +8,7 @@
 
 # Testing
 /coverage
-node_modules/
-.env
+
 
 
 /.env
