@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../../Firebase/firebase"; // ✅ Correct import
+import { auth } from "../../Firebase/firebase"; 
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "./auth.css";
@@ -25,7 +25,7 @@ export default function AuthPage() {
 
     try {
       if (isSignup) {
-        // ✅ Create new user
+        
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         await updateProfile(userCredential.user, { displayName });
         toast.success("🎉 Account created successfully!");
@@ -35,12 +35,12 @@ export default function AuthPage() {
         toast.success("👋 Welcome back!");
       }
 
-      // ✅ Redirect to dashboard
+     
       navigate("/dashboard");
     } catch (error) {
       console.error("Auth Error:", error);
 
-      // Handle Firebase Auth errors clearly
+     
       let message = "Something went wrong!";
       if (error.code === "auth/user-not-found") message = "User not found. Please sign up.";
       if (error.code === "auth/wrong-password") message = "Incorrect password.";

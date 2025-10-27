@@ -1,0 +1,62 @@
+/* Quote container box */
+.quote-box {
+  background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+  padding: 20px 40px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  font-weight: 500;
+  color: #2563eb;
+  max-width: 380px;
+  text-align: center;
+  font-family: "Inter", "Poppins", sans-serif;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+
+  /* 🔥 Center & position nicely */
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slight glowing accent */
+.quote-box::before {
+  content: "💬";
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #3b82f6;
+}
+
+/* Hover interaction */
+.quote-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .quote-box {
+    max-width: 340px;
+    padding: 18px 30px;
+    margin: 25px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-box {
+    max-width: 300px;
+    font-size: 14px;
+    padding: 16px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-box {
+    max-width: 260px;
+    font-size: 13px;
+    padding: 14px 20px;
+  }
+}

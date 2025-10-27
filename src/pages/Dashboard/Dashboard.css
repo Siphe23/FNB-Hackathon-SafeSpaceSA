@@ -1,0 +1,165 @@
+
+
+/* User Info Section */
+.user-card-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+   
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.user-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.user-action-btn:hover {
+  transform: scale(1.1);
+}
+
+.user-action-icon {
+  width: 18px;
+  height: 18px;
+}
+/* Circle Area */
+.dashboard-circle-area {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Icon Wrappers Around Circle */
+.feature-icon-wrapper {
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, z-index 0.25s ease;
+  transform-origin: center center;
+  z-index: 5;
+}
+
+.feature-icon-wrapper:hover {
+  z-index: 10;
+  transform: scale(1.1);
+}
+
+/* Enlarged and refined icon circles */
+.icon-circle {
+  width: 75px;               /* ⬆️ Increased from 60px */
+  height: 75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  background: white;
+  transition: all 0.25s ease;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+/* Icon images enlarged slightly */
+.icon-image {
+  width: 38px;               /* ⬆️ Increased from 28px */
+  height: 38px;
+}
+
+/* Feature name text below each icon */
+.feature-name {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.4px;
+  transition: all 0.25s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Slight hover effect to emphasize icon label */
+.feature-icon-wrapper:hover .feature-name {
+  color: #2563eb;
+  text-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+  transform: scale(1.05);
+}
+
+/* Active state (when clicked/selected) */
+.feature-icon-wrapper.active .feature-name {
+  color: #1d4ed8;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(37, 99, 235, 0.4);
+  letter-spacing: 0.6px;
+}
+
+/* Responsive scaling for smaller screens */
+@media (max-width: 768px) {
+  .feature-name {
+    font-size: 12.5px;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-name {
+    font-size: 11px;
+    margin-top: 4px;
+  }
+}
+/* Keeps icon content upright */
+.icon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+}
+
+
+@media (max-width: 480px) {
+  .dashboard-circle-area {
+    width: 260px;
+    height: 260px;
+  }
+
+  .icon-circle {
+    width: 58px;
+    height: 58px;
+  }
+
+  .icon-image {
+    width: 28px;
+    height: 28px;
+  }
+
+  .feature-name {
+    font-size: 11px;
+  }
+}
+.modal-overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:999;
+}
+.modal { background:#fff; padding:16px; border-radius:12px; width:90%; max-width:900px; }
+.close-btn { float:right; background:#eee; border:none; padding:6px 10px; border-radius:6px; cursor:pointer; }
+
+
