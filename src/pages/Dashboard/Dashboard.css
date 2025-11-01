@@ -1,3 +1,4 @@
+
 .user-card-wrapper {
   position: fixed;
   top: 16px;
@@ -23,7 +24,7 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
-  background: white;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,20 +37,25 @@
   height: 18px;
 }
 
+/* =========================
+   DASHBOARD CIRCLE AREA (refined)
+========================= */
 .dashboard-circle-area {
-  position: relative;
-  width: 90vw;
-  max-width: 420px;
-  height: 90vw;
-  max-height: 420px;
+ 
+  width: 80vw;
+  max-width: 360px;
+  height: 80vw;
+  max-height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 60px auto 20px auto;
   overflow: hidden;
-  padding: 10px;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
+/* Each feature icon around the circle */
 .feature-icon-wrapper {
   position: absolute;
   text-align: center;
@@ -65,14 +71,14 @@
 }
 
 .icon-circle {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-  background: white;
+  background: #fff;
   transition: all 0.25s ease;
 }
 
@@ -82,13 +88,13 @@
 }
 
 .icon-image {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
 }
 
 .feature-name {
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top: 6px;
+  font-size: 13px;
   font-weight: 600;
   color: #1e293b;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -120,20 +126,25 @@
   justify-content: center;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
   .dashboard-circle-area {
-    width: 80vw;
-    height: 80vw;
+    width: 75vw;
+    height: 75vw;
+    max-width: 320px;
+    max-height: 320px;
   }
 
   .icon-circle {
-    width: 60px;
-    height: 60px;
+    width: 54px;
+    height: 54px;
   }
 
   .icon-image {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
   }
 
   .feature-name {
@@ -143,13 +154,15 @@
 
 @media (max-width: 480px) {
   .dashboard-circle-area {
-    width: 90vw;
-    height: 90vw;
+    width: 85vw;
+    height: 85vw;
+    max-width: 300px;
+    max-height: 300px;
   }
 
   .icon-circle {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
   }
 
   .icon-image {
@@ -171,6 +184,9 @@
   }
 }
 
+/* =========================
+   MODALS & POPUPS
+========================= */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -217,6 +233,7 @@
   color: #333;
 }
 
+/* 🎙 Recording Popup */
 .record-popup {
   position: fixed;
   bottom: 20px;
