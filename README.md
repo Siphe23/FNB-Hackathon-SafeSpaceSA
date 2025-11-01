@@ -3,6 +3,10 @@
 SafeSpace SA is a React.js web application designed to help prevent bullying and gender-based violence in South African schools.
 It provides a safe, digital environment where students can report incidents, share their location, and access emotional support tools — all through a modern, easy-to-use interface.
 
+## 🚀 Live Demo
+👉 [Go Live](https://fnb-hackathon-safe-space-sa-f3dw.vercel.app)
+
+
 🚀 Features
 
 🗨️ Quick help via chat, call, or video
