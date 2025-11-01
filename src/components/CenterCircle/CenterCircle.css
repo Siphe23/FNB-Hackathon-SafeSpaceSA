@@ -48,13 +48,13 @@
 .circle-subtitle {
   font-size: 0.95rem;
   line-height: 1.4;
-  color: #475569; /* softer slate color for readability */
+  color: #475569; 
   font-weight: 500;
 }
 
-/* Highlight word (SafeSpace) */
+
 .highlight {
-  color: #10b981; /* calm green tone */
+  color: #10b981; 
   font-weight: 600;
 }
 
@@ -83,14 +83,14 @@
 .circle-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1e40af; /* deep blue */
+  color: #1e40af; 
   margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .circle-subtitle {
   font-size: 0.85rem;
-  color: #4b5563; /* gray-700 */
+  color: #4b5563; 
   font-weight: 400;
   line-height: 1.4;
 }

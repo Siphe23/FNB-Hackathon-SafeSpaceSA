@@ -1,4 +1,4 @@
-/* Quote container box */
+
 .quote-box {
   background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
   padding: 20px 40px;
@@ -13,7 +13,7 @@
   letter-spacing: 0.3px;
   transition: all 0.3s ease;
 
-  /* 🔥 Center & position nicely */
+  
   margin: 30px auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
   justify-content: center;
 }
 
-/* Slight glowing accent */
+
 .quote-box::before {
   content: "💬";
   display: block;
@@ -30,7 +30,7 @@
   color: #3b82f6;
 }
 
-/* Hover interaction */
+
 .quote-box:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
