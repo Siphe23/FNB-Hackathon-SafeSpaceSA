@@ -149,7 +149,7 @@
   }
 }
 
-/* 💻 Tablet (Medium Screens) */
+
 @media (max-width: 768px) {
   .auth-container {
     max-width: 85%;
