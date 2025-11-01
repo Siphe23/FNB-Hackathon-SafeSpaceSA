@@ -1,41 +1,37 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { getDatabase, ref as dbRef, onValue, push, set } from "firebase/database";
-import "./RecordingsList.css"; 
+import "./RecordingsList.css";
 
 export default function RecordingsList() {
-  const [recordings, setRecordings] = useState([]);      
-  const [isRecording, setIsRecording] = useState(false); 
-  const [isSaving, setIsSaving] = useState(false);       
-  const [showPopup, setShowPopup] = useState(false);    
-  const [latestRec, setLatestRec] = useState(null);       
+  const [recordings, setRecordings] = useState([]);
+  const [isRecording, setIsRecording] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [latestRec, setLatestRec] = useState(null);
 
   const mediaRecorderRef = useRef(null);
   const streamRef = useRef(null);
   const chunksRef = useRef([]);
 
- 
-  
+  // Listen to Realtime DB and dedupe by url
   useEffect(() => {
     const db = getDatabase();
     const recRef = dbRef(db, "recordings");
     const unsub = onValue(recRef, (snap) => {
       const data = snap.val() || {};
-    
       const map = new Map();
       Object.entries(data).forEach(([id, value]) => {
         if (value && value.url) {
           map.set(value.url, { id, ...value });
         }
       });
-     
       const arr = Array.from(map.values()).sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
       setRecordings(arr);
     });
     return () => unsub();
   }, []);
 
-  
+  // Start recording
   const startRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -54,19 +50,18 @@ export default function RecordingsList() {
     }
   };
 
+  // Stop recording
   const stopRecording = async () => {
     if (!mediaRecorderRef.current) return;
     const mr = mediaRecorderRef.current;
 
     mr.onstop = async () => {
-      
       const blob = new Blob(chunksRef.current, { type: "audio/webm" });
       const fileUrl = URL.createObjectURL(blob);
       setIsSaving(true);
 
       try {
-       
-        
+        // Upload to backend
         const file = new File([blob], `recording-${Date.now()}.webm`, { type: "audio/webm" });
         const formData = new FormData();
         formData.append("audio", file);
@@ -78,31 +73,31 @@ export default function RecordingsList() {
 
         const data = await res.json();
 
-       
+        // ✅ Define savedUrl before using it anywhere
+        let savedUrl = (res.ok && data?.fileUrl) ? data.fileUrl : fileUrl;
 
-        
+        // Save metadata to Firebase Realtime DB
         try {
           const db = getDatabase();
           const newRef = push(dbRef(db, "recordings"));
           await set(newRef, { url: savedUrl, timestamp: Date.now() });
         } catch (dbErr) {
           console.error("RTDB save error:", dbErr);
-       
         }
 
-        
+        // Show popup
         setLatestRec(savedUrl);
         setShowPopup(true);
-
-        // auto-close popup after 10s
         setTimeout(() => setShowPopup(false), 10000);
+
       } catch (err) {
         console.error("upload error:", err);
         alert("Upload failed.");
       } finally {
         setIsSaving(false);
       }
-    
+
+      // Cleanup
       if (streamRef.current) {
         streamRef.current.getTracks().forEach((t) => t.stop());
         streamRef.current = null;
@@ -112,12 +107,10 @@ export default function RecordingsList() {
       setIsRecording(false);
     };
 
-    
     mr.stop();
   };
 
-
-  
+  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
@@ -162,7 +155,7 @@ export default function RecordingsList() {
         )}
       </div>
 
-  
+      {/* Popup preview */}
       {showPopup && latestRec && (
         <div className="popup-overlay" onClick={() => setShowPopup(false)}>
           <div className="popup-box" onClick={(e) => e.stopPropagation()}>
