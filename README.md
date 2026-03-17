@@ -25,15 +25,15 @@ It provides a safe, digital environment where students can report incidents, sha
 
 🛠️ Tech Stack
 
-React.js (Vite / CRA) — Frontend framework
+React.js (Vite / CRA): Frontend framework
 
 Firebase — Authentication, Realtime Database, and Storage
 
-Framer Motion — Animations and transitions
+Framer Motion: Animations and transitions
 
-Tailwind CSS / Custom CSS — Responsive UI styling
+Tailwind CSS / Custom CSS: Responsive UI styling
 
-Node.js (optional backend) — For future integrations
+Node.js (optional backend): For future integrations
 
 📍 Location
 
